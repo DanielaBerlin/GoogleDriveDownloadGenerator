@@ -64,5 +64,7 @@ function generateLink(e) {
     copyVideo.addEventListener('click', () => {
       return copyText(embedVideo);
     });
+  } else {
+    alert('Please enter a Google Drive File Link');
   }
 }
