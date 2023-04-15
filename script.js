@@ -31,12 +31,21 @@ function generateLink(e) {
             }
         }
 
-        const copy = document.querySelector(."copy");
+        const copy = document.querySelector(".copy");
         copy.addEventListener("click", () => {
             return copyText(downloadLink);
         })
 
         //EMBED AUDIO FUNCTION
-            const audio1 = 
+            const audio1 = '<audio width="300" height="32" controls="controls" src="'; 
+            const audio2 = '" type="audio/mp3"></audio>'
+            const embedAudio = document.getElementById("embed-audio");
+            embedAudio.value = `${audio1}${downloadLink.value} ${audio2}`;
+            // console.log(embedAudio.value)
+            //COPY AUDIO EMBED CODE
+            const copyAudio = document.querySelector(".copy-audio");
+            copyAudio.addEventListener("click", () => {
+                return copyText(embedAudio);
+            } )
     }
 }
